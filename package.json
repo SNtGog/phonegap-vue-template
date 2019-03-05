@@ -1,0 +1,70 @@
+{
+  "name": "phonegap-vue-template",
+  "version": "1.0.0",
+  "description": "template project",
+  "author": "Gog",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "template",
+    "vue",
+    "phonegap"
+  ],
+  "license": "ISC",
+  "main": "src/main.js",
+  "cordova": {
+    "plugins": {}
+  },
+  "dependencies": {
+    "css-loader": "^2.1.0",
+    "gulp": "^4.0.0",
+    "gulp-exec": "^3.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.0",
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.2",
+    "sass-loader": "^7.1.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333",
+    "vue": "^2.6.6"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-class-component": "^6.3.2",
+    "vue-cli-plugin-vuetify": "^0.4.6",
+    "vue-property-decorator": "^7.3.0",
+    "vue-template-compiler": "^2.6.6"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
