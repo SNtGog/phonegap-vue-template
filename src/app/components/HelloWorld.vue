@@ -31,8 +31,7 @@
 </template>
 
 <script lang="ts">
-import { Prop, Component } from 'vue-property-decorator';
-import Vue from 'vue';
+import { Prop, Component, Vue } from 'vue-property-decorator';
 
 @Component({
 
