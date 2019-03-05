@@ -1,6 +1,4 @@
 const gulp = require('gulp');
-const sourcemaps = require( 'gulp-sourcemaps' );
-const ts = require("gulp-typescript");
 const execSync = require('child_process').execSync;
 const Bundler = require('parcel-bundler');
 const Path = require('path');
