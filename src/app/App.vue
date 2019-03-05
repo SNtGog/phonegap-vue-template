@@ -5,14 +5,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import {Component, Vue, Watch} from 'vue-property-decorator'
 
-export default {
-  name: 'app',
+@Component({
   components: {
     HelloWorld
   }
+})
+export default class App extends Vue {
+  name: string = 'App';
 }
 </script>
 

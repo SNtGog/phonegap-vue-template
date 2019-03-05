@@ -4,6 +4,7 @@
 /plugins
 /public/cordova.js
 /www
+/.cache
 
 .DS_Store
 node_modules
