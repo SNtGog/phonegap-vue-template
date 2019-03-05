@@ -4,29 +4,12 @@ A PhoneGap Hello World template
 
 ## Usage
 
-#### PhoneGap CLI
-
-The hello-world template is the default when you create a new application using the [phonegap-cli][phonegap-cli-url].
-
-    phonegap create my-app
-
-Create an app using this template specifically:
-
-    phonegap create my-app --template hello-world
-
-To see a list of other available PhoneGap templates:
-
-    phonegap template list
-
-## [config.xml][config-xml]
-
-#### android-minSdkVersion (Android only)
-
-Minimum SDK version supported on the target device. Maximum version is blank by default.
-
-This template sets the minimum to `14`.
-
-    <preference name="android-minSdkVersion" value="14" />
+npm run browser
+npm run android
+npm run ios
+npm run browser:prod
+npm run android:prod
+npm run ios:prod
 
 #### &lt;access ...&gt; (All)
 

@@ -10,8 +10,14 @@
       "allowJs": true,
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "emitDecoratorMetadata": true,
       "sourceMap": true,
       "baseUrl": ".",
+      "newLine": "LF",
       "types": [
 
       ],
@@ -28,7 +34,6 @@
       ],
     },
     "include": [
-      "src/**/*.js",
       "src/**/*.ts",
       "src/**/*.tsx",
       "src/**/*.vue",
