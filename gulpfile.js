@@ -18,7 +18,7 @@ function _bundle( optionOverrides = {}) {
     // outFile: '/widget/widget.html', // The name of the outputFile
 
     // must be set to relative otherwise in widget.html the injection are absolute path and break
-    publicUrl: './', // The url to serve on, defaults to dist
+    publicUrl: '/', // The url to serve on, defaults to dist
 
     watch: true, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
     cache: true, // Enabled or disables caching, defaults to true

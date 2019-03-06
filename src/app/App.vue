@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Phonegap logo" src="../assets/logo.png">
+    <HelloWorld :msg='helloMessage'/>
   </div>
 </template>
 
@@ -16,6 +16,7 @@ import {Component, Vue} from 'vue-property-decorator'
 })
 export default class App extends Vue {
   name: string = 'App';
+  helloMessage: string = 'Phonegap + Vue.js Template App';
 }
 </script>
 

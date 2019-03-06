@@ -9,7 +9,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/*.ts"
   ],
   "exclude": [
     "node_modules"
