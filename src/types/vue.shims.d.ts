@@ -8,6 +8,9 @@ declare module '*.png' {
     export default _default
 }
 
+declare let cordova: any;
+declare let process: any;
+
 // ---------------------------------
 // | Types
 // ---------------------------------

@@ -3,6 +3,8 @@
     <div class="logo">
       <div class="hello">
         <h1>{{ msg }}</h1>
+        <h2>Platform: {{ platform }}</h2>
+        <h2>ENV: {{ env }}</h2>
       </div>
     </div>
     <div :class="`confetti-${number}`" v-for="number in 150"></div>
@@ -19,6 +21,8 @@ import { Prop, Component, Vue } from 'vue-property-decorator';
 export default class App extends Vue {
   name: string = 'HelloWorld';
   @Prop() msg!: String;
+  platform: string = cordova.platformId;
+  env: string = process.env.NODE_ENV;
 }
 
 </script>
