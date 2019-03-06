@@ -11,15 +11,9 @@ A PhoneGap Hello World template
   npm run android:prod
   npm run ios:prod
 
-#### &lt;access ...&gt; (All)
+## Folders
 
-This template defaults to wide open access.
-
-    <access origin="*" />
-
-It is strongly encouraged that you restrict access to external resources in your application before releasing to production.
-
-For more information on whitelist configuration, see the [Cordova Whitelist Guide][cordova-whitelist-guide] and the [Cordova Whitelist Plugin documentation][cordova-plugin-whitelist]
+/www folder should always be empty. It needed by cordova, but we don't use it.
 
 ## [www/index.html][index-html]
 
