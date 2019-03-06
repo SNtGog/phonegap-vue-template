@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img alt="Phonegap logo" src="../assets/logo.png">
     <HelloWorld :msg='helloMessage'/>
   </div>
 </template>
@@ -21,12 +20,10 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+/* Portrait layout (default) */
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;                   /* text area height */
+  width: 100%;                   /* text area width */
 }
+
 </style>

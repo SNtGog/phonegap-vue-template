@@ -1,0 +1,9 @@
+configurations.all {
+    resolutionStrategy {
+        force 'com.android.support:support-v4:27.1.+'
+        force 'com.google.android.gms:play-services-base:16.0.+'
+        force 'com.google.android.gms:play-services-ads:16.0.+'
+        force 'com.google.firebase:firebase-core:16.0.+'
+        force 'com.google.android.gms:play-services-analytics:16.0.+'
+    }
+}
