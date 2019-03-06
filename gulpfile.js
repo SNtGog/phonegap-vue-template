@@ -65,7 +65,7 @@ async function serveTask( done ) {
 
 async function prepareTask( done ) {
   fs.existsSync("./www") || fs.mkdirSync("./www");
-  await clean('./www/*');
+  // await clean('./www/*');
 
   execSync(`phonegap prepare ${process.env.NODE_ENV} --verbose`, {stdio: 'inherit'});
   done();

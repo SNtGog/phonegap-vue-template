@@ -1,4 +1,4 @@
-# Hello World PhoneGap Template 
+# Hello World PhoneGap Template
 
 A PhoneGap Hello World template
 
@@ -13,7 +13,7 @@ A PhoneGap Hello World template
 
 ## Folders
 
-/www folder should always be empty. It needed by cordova, but we don't use it.
+/www folder should always be empty. It needed by cordova, but we don't use it (except such files as google-services.json, GoogleService-Info.plist).
 
 ## [www/index.html][index-html]
 

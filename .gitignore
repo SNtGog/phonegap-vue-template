@@ -3,7 +3,6 @@
 /platforms
 /plugins
 /public/cordova.js
-/www
 /.cache
 
 .DS_Store
