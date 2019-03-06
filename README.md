@@ -1,15 +1,15 @@
-# Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
+# Hello World PhoneGap Template 
 
 A PhoneGap Hello World template
 
 ## Usage
 
-  npm run browser
-  npm run android
-  npm run ios
-  npm run browser:prod
-  npm run android:prod
-  npm run ios:prod
+ * npm run browser
+ * npm run android
+ * npm run ios
+ * npm run browser:prod
+ * npm run android:prod
+ * npm run ios:prod
 
 ## Folders
 
