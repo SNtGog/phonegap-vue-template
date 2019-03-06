@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@types/cordova": "0.0.34",
+    "cordova-android": "7.0.0",
     "cordova-browser": "5.0.4",
     "cordova-custom-config": "^5.0.3",
     "cordova-plugin-battery-status": "^1.2.5",
