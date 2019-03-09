@@ -4,7 +4,7 @@
   "description": "template project",
   "author": "Gog",
   "scripts": {
-    "test": "parcel build src/index.html",
+    "test": "cross-env NODE_ENV=android gulp test",
     "browser": "cross-env NODE_ENV=browser gulp dev",
     "android": "cross-env NODE_ENV=android gulp dev",
     "ios": "cross-env NODE_ENV=ios gulp dev",
@@ -35,11 +35,13 @@
       "cordova-custom-config": {}
     },
     "platforms": [
-      "browser"
+      "browser",
+      "android"
     ]
   },
   "dependencies": {
     "@types/cordova": "0.0.34",
+    "browser-sync": "^2.26.3",
     "cordova-android": "7.0.0",
     "cordova-browser": "5.0.4",
     "cordova-custom-config": "^5.0.3",

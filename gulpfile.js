@@ -5,6 +5,7 @@ const Path = require('path');
 const fs = require( 'fs' );
 const rimraf = require('rimraf');
 const envConfig = require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
+const browserSync = require('browser-sync').create();
 
 function clean(path) {
   return new Promise((resolve, reject) => rimraf(path, resolve));
@@ -12,13 +13,22 @@ function clean(path) {
 
 let isDevelopment = true;
 
+var browserSyncConfig = {
+  server: {
+      baseDir: Path.resolve(__dirname, process.env.OUT_DIR)
+  },
+  // tunnel: true,
+  host: 'localhost',
+  port: 3000
+};
+
 function _bundle( optionOverrides = {}) {
   const options = Object.assign({
-    outDir: process.env.OUT_DIR, // The out directory to put the build files in, defaults to dist
+    outDir: Path.resolve(__dirname, process.env.OUT_DIR), // The out directory to put the build files in, defaults to dist
     // outFile: '/widget/widget.html', // The name of the outputFile
 
     // must be set to relative otherwise in widget.html the injection are absolute path and break
-    publicUrl: '/', // The url to serve on, defaults to dist
+    publicUrl: './', // The url to serve on, defaults to dist
 
     watch: true, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
     cache: true, // Enabled or disables caching, defaults to true
@@ -33,7 +43,7 @@ function _bundle( optionOverrides = {}) {
     //   key: './ssl/key.pem' // Path to custom key
     // },
     logLevel: 3, // 5 = save everything to a file, 4 = like 3, but with timestamps and additionally log http requests to dev server, 3 = log info, warnings & errors, 2 = log warnings & errors, 1 = log errors
-    hmr: process.env.BROWSER_RELOAD, // Enable or disable HMR while watching
+    hmr: false, // Enable or disable HMR while watching
     hmrPort: 0, // The port the HMR socket runs on, defaults to a random free port (0 in node.js resolves to a random free port)
     hmrHostname: '', // A hostname for hot module reload, default to ''
     sourceMaps: isDevelopment, // Enable or disable sourcemaps, defaults to enabled (minified builds currently always create sourcemaps)
@@ -51,21 +61,35 @@ function _bundle( optionOverrides = {}) {
 }
 
 async function serveTask( done ) {
+  if (!process.env.NODE_ENV) {
+    throw "NODE_ENV not specified";
+  }
+
   const bundler = _bundle();
 
   bundler.on('buildEnd', () => {
     console.log('bundler: buildEnd');
+    if (process.env.NODE_ENV === 'browser') {
+      browserSync.reload();
+    }
   });
 
+  await bundler.bundle();
+
   if (process.env.NODE_ENV === 'browser') {
-    await bundler.serve(3000);
+    console.log('serve', Path.resolve(__dirname, process.env.OUT_DIR));
+    browserSync.init(browserSyncConfig);
   }
+
   done();
 }
 
 async function prepareTask( done ) {
+  if (!process.env.NODE_ENV) {
+    throw "NODE_ENV not specified";
+  }
+
   fs.existsSync("./www") || fs.mkdirSync("./www");
-  // await clean('./www/*');
 
   execSync(`phonegap prepare ${process.env.NODE_ENV} --verbose`, {stdio: 'inherit'});
   done();
@@ -78,3 +102,4 @@ function setProductionMode(done) {
 
 gulp.task('dev', gulp.series([prepareTask, serveTask]));
 gulp.task('production', gulp.series([setProductionMode, prepareTask, serveTask]));
+gulp.task('test', gulp.series([serveTask]));

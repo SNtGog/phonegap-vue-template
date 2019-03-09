@@ -135,4 +135,5 @@
     <plugin name="cordova-plugin-vibration" spec="^2.1.6" />
     <plugin name="cordova-custom-config" spec="^5.0.3" />
     <engine name="browser" spec="5.0.4" />
+    <engine name="android" spec="7.0.0" />
 </widget>
